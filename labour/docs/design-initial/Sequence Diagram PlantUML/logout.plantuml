@@ -1,0 +1,13 @@
+@startuml
+title Logout sequence diagram
+
+User->Client: Clicks on "Logout" button
+Client->>Server: Request to logout
+
+activate Server
+Server->Server: Destroy current session
+Client->User: Redirect to login page
+deactivate Server
+
+
+@enduml

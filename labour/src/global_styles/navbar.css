@@ -1,0 +1,91 @@
+.main-header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 4em;
+    
+    gap: 5%;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(18px);
+    background-color: rgb(255 255 255 / 66%);
+}
+
+#logo {
+max-width: 40%;
+  max-height: 4em;
+  align-self: center;
+  font-size: 2em;
+  text-wrap: nowrap;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.main-nav {
+    position: relative;
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 4em;
+}
+
+.main-nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #D23127;
+}
+
+.main-nav>* {
+    font-size: 130%;
+    line-height: 3em;
+    color: black;
+    padding: 0 4px;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #D23127;
+}
+
+nav>* {
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    color: black;
+    padding: 0 4px;
+}
+
+nav>*:not(.selected-nav):hover {
+    background: #ff8e8952;
+}
+
+.selected-nav {
+    background: #D23127;
+    color: white;
+}
+@media screen and (max-width: 850px) {
+    #main-logo {
+        display: none;
+    }
+}

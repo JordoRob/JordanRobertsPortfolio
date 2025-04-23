@@ -1,0 +1,51 @@
+body, *{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}.flex-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+    flex-direction: column;
+    gap: 1vh;
+}.dogImage{
+    width:600px;
+    height:auto;
+    max-height:600px;
+    border:1px transparent solid;
+    border-radius: 10%;
+}.table-Image{
+    border:1px transparent solid;
+    border-radius: 10%;
+    width:200px;
+    height:auto;
+    max-height:200px;
+}
+#table-container{
+    max-height:75vh;
+    overflow-y:scroll;
+}
+td {
+    border: 1px solid;
+    border-radius: 5px;
+    padding:5px;
+  }
+#dogForm{
+    display:flex;
+    flex-direction:column;
+    gap:0.1vh;
+    width:100%;
+    margin:0 auto;
+    padding:10px;
+    align-items:center;
+} #dogForm input{
+    width:10%;
+}
+#dogForm textArea{
+    width:20%;
+    height:10vh;
+}

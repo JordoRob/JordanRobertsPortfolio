@@ -1,0 +1,24 @@
+@startuml
+Participant User
+Participant Client
+Participant Server
+Participant Database
+title Generate View Graph/Summaries Sequence Diagram
+
+User->Client: Requests to generate view graph
+Client->>Server: Sends request to generate view graph
+
+activate Server
+alt Data Retrieval Success
+    Server->Database: Retrieves data from the database
+    Database-->>Server: Returns data to the server
+
+    Server->Server: Processes the data to generate the view graph
+    Server-->>Client: Sends the generated view graph
+else Data Retrieval Failure
+    Server-->>Client: Sends failure notification
+end
+deactivate Server
+
+Client->User: Displays the generated graph/summaries or failure message
+@enduml

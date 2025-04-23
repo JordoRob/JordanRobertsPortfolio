@@ -1,0 +1,24 @@
+@startuml
+Participant User
+Participant Client 
+Participant Server
+Participant Database
+title Import CSV sequence diagram
+
+User->Client: Selects CSV file to import
+Client->>Server: Upload of CSV file
+
+activate Server
+Server->>Server: Parse CSV file using PHP
+alt Success
+    Server->>Server: Extract job data from CSV
+    Server->>Database: Store job data
+    Database-->>Server: Confirmation of import
+    Server-->>Client: Sends import status
+else Failure
+    Server-->>Client: Sends error message
+end
+deactivate Server
+
+Client->User: Displays import status /view error message
+@enduml

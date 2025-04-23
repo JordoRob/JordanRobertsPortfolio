@@ -1,0 +1,7 @@
+@startuml
+Participant User
+Participant Client
+title View Schedule Sequence diagram
+User->Client: Requests to enter view mode
+Client->User: Displays the job board in view mode
+@enduml

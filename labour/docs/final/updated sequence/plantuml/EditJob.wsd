@@ -1,0 +1,32 @@
+@startuml
+
+skin rose
+
+title Edit Job
+
+Actor User
+Participant Client 
+Participant Server
+Database Database AS DB
+
+User -> Client: Clicks Edit job button
+Client -> User: Replaces text elements with input elements
+User -> Client: Completes and Submits form
+Client ->> Client: Validates input
+alt Validated (Client Side)
+activate Server
+Client -> Server: Sends Information to update_job.php
+Server -> Server: Validate data
+alt Validated (Server Side)
+Server -> DB: Updates job in database
+Server -> Client: Success/Failure
+Client -> User: Rebuild job overlay
+else Failure
+Server -> Client: Failure message
+Client -> User : Display Server validation error
+end
+deactivate Server
+else Failure
+Client -> User: Displays failed validation
+end
+@enduml

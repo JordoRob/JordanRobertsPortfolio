@@ -1,0 +1,28 @@
+@startuml
+Participant User
+Participant Client
+Participant Server
+Participant Database
+title Delete Employee Sequence Diagram
+
+User->Client: Requests to delete an employee
+Client->User: Displays confirmation dialog
+
+User->Client: Confirms to delete the employee
+Client->>Server: Sends request to delete the employee
+
+activate Server
+alt Success
+
+Server->Database: Delete the employee from the database
+Database-->>Server: Confirmation of deletion
+
+Server-->>Client: Sends confirmation of deletion
+else Fail
+Server-->>Client: Sends failure notification
+end
+deactivate Server
+
+Client->User: Displays confirmation of deletion or error message
+
+@enduml

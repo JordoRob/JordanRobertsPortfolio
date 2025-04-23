@@ -1,0 +1,176 @@
+@font-face {
+    font-family: "ms";
+    src: url("../font/WindowsRegular.ttf");
+}
+@import url(//fonts.googleapis.com/css2?family=Press+Start+2P);
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+.post-blurb{
+    font-size: 0.8em;
+    font-family: 'ms';
+    padding: 4px;
+    width: 50vmin;
+display:inline-block;
+text-align:center;
+margin-left:50%;
+transform:translateX(-50%);
+
+}
+body{
+    font-family: "ms", Fallback, "Press Start 2P";
+    background: #008080;
+    font-size: 3vmin;
+    font-weight: normal;
+    font-style: normal;
+}
+h1, h2, h3, h4, h5{
+    margin:0px 0px;
+}
+nav{
+    display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 16px;
+margin-left:4px;
+}nav>a{
+    color:black;
+    font-style: normal;
+    box-sizing: border-box;
+    padding-left:8px;
+    padding-right:8px;
+    text-decoration: none;
+    margin-top:2px;
+    margin-bottom:2px;
+}nav>a:hover{
+    background:#7E7E7E;
+}
+nav>a:active{
+    background:#02007F;
+    color:white;
+}
+.outerbox{  /*MOST outset looking boxes*/
+    box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E, inset 4px 4px 0px #B1B1B1;
+}.innerbox{ /*MOST inset looking boxes*/
+    box-shadow: inset 2px 2px 0px #262626, inset -2px -2px 0px #F0F0F0, inset 4px 4px 0px #7E7E7E;
+}
+.colflex-center{    /*column-flex center*/
+display:flex;
+ justify-content:space-around;
+ flex-direction:column;
+ padding:5px;
+ align-items:center;
+}
+.colflex-left{  /*column-flex left*/
+    display:flex;
+     justify-content:start;
+     flex-direction:column;
+     padding:5px;
+     align-items:left;
+    }
+.rowflex{   /*row-flex*/
+    display:flex;
+    justify-content:left;
+    flex-direction:row;
+    padding:5px;
+    align-items:center; 
+}
+.rowflex-utility-main{  /*rowflex used for top buttons*/
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+
+    width: 100%;
+}
+.rowflex-utility{   /*Rowflex used for most small buttons i guess*/
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+    top: 3px;
+    position: absolute;
+    right: 3px;
+    width: 100%;
+}
+.bottombox{
+    font-size:0.6em;
+    margin:8px 0px;
+    padding:4px;
+    box-sizing: border-box;
+    min-width:39vw;
+    display:inline-block;
+}
+.rowflex-center{
+    display:flex;
+    justify-content:center;
+    flex-direction:row;
+    align-items:center;
+    gap:6px;
+    margin:0px 16px;
+}
+
+  @keyframes my-animation { /*hehe dogs run by*/
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }}
+@keyframes rainbow {    /*pride month*/
+    0% { color:red; }
+    15% { color:orange; }
+    30% { color: yellow; }
+    45% { color: green; }
+    60% { color: blue; }
+    75% { color: indigo; }
+    90% { color: violet; }
+    100% {color:red;}
+  }
+  button{
+    font-family: 'ms';
+  }
+  .ratebuttons-enabled{
+    background-color: #C3C3C3;
+    padding: 2px 4px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 0.8em;
+    text-align: center;
+}
+.ratebuttons-enabled:active{
+    box-shadow: inset 2px 2px 0px #262626, inset -2px -2px 0px #F0F0F0, inset 4px 4px 0px #7E7E7E;
+    
+}
+.ratebuttons-enabled:hover{
+    cursor:pointer;
+}
+.ratebuttons-disabled{
+    background-color: #C3C3C3;
+    padding: 2px 4px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 0.8em;
+    box-shadow: inset 2px 2px 0px #262626, inset -2px -2px 0px #F0F0F0, inset 4px 4px 0px #7E7E7E;
+    text-align: center;
+}
+.Like{
+    background-color:lightgreen;
+}
+.Dislike{
+    background-color:lightcoral;
+}
+.rating{
+    text-align: center;
+}#postTitle, #post, .search, .topicSelect{
+    font-size: inherit;
+    font-family: 'ms';
+    background-color: white;
+}

@@ -1,0 +1,19 @@
+@startuml
+
+skin rose
+
+title Employee List (Job Page)
+
+Actor User
+Participant Client 
+Participant Server
+Database Database AS DB
+
+User -> Client: Clicks 'Show Employees' Button or Selects Tab
+Client -> Server: Requests selected employee data
+Server -> DB: Querys for all Employees matching type
+DB -> Server: Returns Employee Resultset
+Server -> Client: Returns employee Data formatted as HTML
+Client -> User: Displays employee data in overlay
+
+@enduml

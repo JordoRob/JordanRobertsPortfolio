@@ -1,0 +1,18 @@
+#preview_background {
+    height: 3em;
+}
+.account_changing{
+    display:flex;
+    flex-direction:column;
+    gap:1em;
+    justify-content: space-between;
+    width:50%;
+}
+.account_changing form{
+    width:100%;
+}#set_interval .form_field{
+    height:8em;
+    width:90%;
+    display:flex;
+    flex-direction: column;
+}

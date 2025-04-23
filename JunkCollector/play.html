@@ -1,0 +1,37 @@
+<html>
+<head>
+    <style>
+    </style>
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="topBar">
+        <img id="audio" src="img/volume.png">
+        <span style="display:flex;">
+         <div class="scoreCont">
+            <span>Score: </span><span id="scoreCard"></span>
+        </div>
+        <div id="collection">
+
+        </div>
+        </span>
+        <div class="healthContainer">
+            <img class='healthIcon' src="img/shield.png">
+            <img class='healthIcon' src="img/shield.png">
+            <img class='healthIcon' src="img/shield.png">
+        </div>
+       
+    </div>
+<div id="gameArea">
+<canvas id="foreground">    </canvas>
+<canvas id="background"></canvas>
+
+</div>
+<div id="bottomBar">
+    <a href="../index.html" id="homeButton">Return to Home</a>
+<div class="info"></div></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src='game.js'></script>
+</html>

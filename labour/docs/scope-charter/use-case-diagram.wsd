@@ -1,0 +1,42 @@
+@startuml
+
+skin rose
+left to right direction
+
+actor "Construction Manager" AS ConMan
+actor "Admin" AS admin
+
+rectangle "System Boundary" {
+    'Account stuff
+    ConMan -- (Login)
+    ConMan -- (Logout)
+
+    (View Editable Schedule) AS VES
+    (View Simplified Schedule) AS VSS
+    ConMan -- VES
+    ConMan -- VSS
+
+    VES <... (Add New Employee) : <<extend>>
+    VES <... (Allocate/Move Employee) : <<extend>>
+    VES <... (Edit Employee Details) : <<extend>>
+    VES <... (Delete Employee) : <<extend>>
+
+    VES <... (Add New Job) : <<extend>>
+    VES <... (Archive Job) : <<extend>>
+    VES <... (Edit Job Details) : <<extend>>
+
+    VES <... (Edit Number of Employees for Job Month) : <<extend>>
+    VES <... (Allocate/Move Foreman) : <<extend>>
+    VES <... (Undo Previous Action) : <<extend>>
+    VES <... (Import CSV) : <<extend>>
+    VES <... (Export CSV) : <<extend>>
+    ConMan -- (View Graphs/Summaries)
+
+
+    admin -- (Create Account)
+    admin -- (Reset User's Password) 
+    admin -- (View Diagnostic Data)
+    admin -- (Load Database Backup)
+    ConMan -- (Change Password)
+}
+@enduml

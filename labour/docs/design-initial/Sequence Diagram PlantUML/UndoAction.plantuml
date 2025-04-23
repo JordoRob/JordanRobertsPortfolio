@@ -1,0 +1,25 @@
+@startuml
+Participant User
+Participant Client
+Participant Server
+Participant Database
+title Undo Action sequence diagram
+
+
+User->Client: Requests to undo the action
+Client->>Server: Sends request to undo the action
+
+activate Server
+Server->Database: Retrieves the previous action from the database
+Database-->Server: Returns the previous action from the database
+
+Server -> Server: Undo previous action
+Server-->>Database: remove previous action record from database
+
+
+Server-->>Client: Sends confirmation of action reversion
+deactivate Server
+
+Client->User: Displays the website in reverted state
+
+@enduml

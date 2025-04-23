@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+    <html lang="en"></html>
+<html>
+  <head>
+  	<style>
+        #homeButton{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 10%;
+            z-index: 4;
+            text-decoration: none;
+            color: rgb(169, 115, 255);
+            font-size: 1vw;
+        }
+        #audio{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5%;
+            z-index: 4;
+        }
+        .flexdiv{
+            display:flex;
+flex-direction:row;
+justify-content:space-evenly;
+width:100%;
+margin-top:3%;
+z-index: 4;
+        }
+        .pictures{
+            display:flex;
+flex-direction:column;
+justify-content:space-evenly;
+width:100%;
+        }
+        img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        body{
+background-image: url("img/BG.png");
+background-repeat: no-repeat;
+background-size: cover;
+height: 100vh;
+overflow:hidden;
+}.flexCol{
+    display:flex;
+flex-direction:column;
+justify-content: space-between;
+width:100%;
+height:100%;
+box-sizing: border-box;
+z-index: 4;
+align-content: flex-start;
+padding:2vh;
+}
+        </style>
+</head>
+    <body>
+        <img src="img/volume.png" alt="Toggle Music" id="audio">
+        <div class="flexCol">
+        <img src="img/title.png" alt="title" style="width:40%; z-index: 4;">
+        <a href="play.html">
+        <img src="img/PlayButt.png" alt="PlayButt" style="width:20%; z-index: 4;">
+        </a>
+        <div class="flexdiv"> 
+            <div class="pictures">
+                <img src="img/grab.png" alt="grab" style="width:35%; height:10%;">
+                <img src="img/Garbage1.png" alt="Garbage1"style="width:25%; height:60%;">
+        </div>
+        <div class="pictures"> <img src="img/avoid.png" alt="avoid" style="width:60%">
+            <img src="img/asteroid.png" alt="asteroid" style="width:20%">
+        </div>
+        <div class="pictures">
+            <img src="img/maneuver.png" alt="maneuver" style="width:60%; height: 20%;">
+            <img src="img/ArrowKeys.png" alt="ArrowKeys"style="width:40%; height: 60%;">
+        </div>
+        </div>
+    </div>
+        <footer>
+            <a href="../index.html" id="homeButton">Return to Home</a>
+            
+        </footer>
+        </body>
+        <script>
+            var audio = document.getElementById("audio");
+            var music= new Audio("assets/music.mp3");
+            audio.addEventListener("click", function(){
+                if(music.paused){
+                    music.volume=0.2;
+                    music.play();
+                }
+                else{
+                    music.pause();
+                }
+            });
+            </script>
+</html>

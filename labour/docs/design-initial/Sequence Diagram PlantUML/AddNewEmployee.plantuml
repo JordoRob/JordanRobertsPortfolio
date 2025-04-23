@@ -1,0 +1,27 @@
+@startuml
+Participant User
+Participant Client
+Participant Server
+Participant Database
+title Add a new employee
+User->Client: Requests to enter edit view 
+Client->User: Displays edit view for the user
+
+User->Client: Enters new employee information
+Client->>Server: Sends request to add a new employee
+
+activate Server
+alt Success
+
+Server->Database: Insert a new employee
+Database-->>Server: Confirmation of employee insertion
+
+Server-->>Client: Sends confirmation of employee addition
+else Fail
+Server-->>Client: Sends failure notification
+end
+deactivate Server
+
+Client->User: Displays the added employee or error message
+
+@enduml

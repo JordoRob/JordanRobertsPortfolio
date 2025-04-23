@@ -1,0 +1,75 @@
+Table user {
+  id INT [primary key, increment]
+  username VARCHAR(64)
+  password VARCHAR(100)
+  recent_password_reset BOOLEAN
+  is_admin BOOLEAN
+  custom_order MEDIUMTEXT
+  use_background BOOLEAN
+  refresh_timer INT [not null]
+  created_at TIMESTAMP
+}
+
+Table job {
+  id INT [primary key, increment]
+  title VARCHAR(255)
+  address VARCHAR(255)
+  archived DATE
+  manager_name VARCHAR(255)
+  start_date DATE
+  end_date DATE
+  notes TEXT
+}
+
+Table employee {
+  id INT [primary key, increment]
+  role INT
+  name VARCHAR(100)
+  active INT [default: 0]
+  archived DATE
+  img VARCHAR(100) [default: "img/emp/default.png"]
+  birthday DATE
+  phoneNum VARCHAR(15) [default: "(000) 000-0000"]
+  phoneNumSecondary VARCHAR(15) [default: "(000) 000-0000"]
+  notes TEXT
+  email VARCHAR(200) [default: ""]
+  hired DATE
+  redseal INT [default: 0]
+}
+
+Table worksOn {
+  employee_id INT
+  job_id INT
+}
+
+Table outlook {
+  job_id INT [primary key]
+  date DATE [primary key]
+  count INT
+
+  
+}
+
+Table assignments {
+  assignment_id INT [primary key, increment]
+  employee_id INT
+  job_id INT
+  start_date DATE
+  end_date DATE
+  assigner INT
+}
+
+Table update_time {
+  table_name VARCHAR(50) [primary key]
+  last_update TIMESTAMP
+}
+
+Ref: worksOn.employee_id > employee.id [delete: cascade]
+Ref: worksOn.job_id > job.id [delete: cascade]
+
+Ref: outlook.job_id > job.id [delete: cascade]
+
+Ref: assignments.employee_id > employee.id [delete: cascade]
+Ref: assignments.job_id > job.id [delete: cascade]
+Ref: assignments.assigner > user.id [delete: cascade]
+

@@ -1,0 +1,26 @@
+@startuml
+skin rose
+
+skinparam participantPadding 20
+skinparam participantBorderColor black
+
+title Unarchive Job Sequence Diagram
+
+actor User
+participant Client
+participant Server
+participant Database
+
+User -> Client: Navigate to History Page
+Client -> Server: Select Archived Job
+Server -> Client: Display Job Details
+Client -> Server: Select Unarchive Option
+Server --> Client: Prompt Confirmation
+User -> Client: Confirm "Yes"
+Client -> Server: Request to unarchive the job
+Server -> Database: Change Job status to unarchived
+Database -> Server: Acknowledge change in status
+Server -> Client: Restore Job to Active Panel
+Client --> User: Visual Confirmation
+
+@enduml

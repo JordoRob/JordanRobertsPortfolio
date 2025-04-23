@@ -1,0 +1,26 @@
+@startuml
+Participant User
+Participant Client
+Participant Server
+Participant Database
+title Add a new job
+User->Client: Requests to enter edit view 
+Client->User: Displays edit view for the user
+
+User->Client: Enters new job information
+Client->>Server: Sends request to add a new job
+
+activate Server
+alt Success
+
+Server->Database: insert a new job 
+Database-->>Server: Confirmation of job insertion
+
+    Server-->>Client: Sends confirmation of job addition
+else Fail
+    Server-->>Client: Sends failure notification
+end
+deactivate Server
+    Client->User: Displays the added job or error message
+
+@enduml

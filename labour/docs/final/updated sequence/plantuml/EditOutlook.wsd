@@ -1,0 +1,31 @@
+@startuml
+
+skin rose
+
+title Edit Outlook Sequence Diagram
+
+Actor User
+Participant Client 
+Participant Server
+Database Database AS DB
+
+User->Client: Makes Edit of number
+Client -> Client: Validates input
+Client->User: Displays validated number
+
+Client->>Server: EditProjectionNumber.php with job_id, number, date
+
+Server -> Server: Validates input
+
+Server->DB: Update existing outlook
+return rows updated
+
+Server->DB: [rows update = 0] Make new outlook
+
+
+Client <--Server: success message
+
+
+Client->User: Displays Success message
+
+@enduml

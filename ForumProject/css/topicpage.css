@@ -1,0 +1,38 @@
+.postBody>tr>td{   /*post table cells*/
+        text-align:center;
+    }.postTable{    /*post table*/
+width:100%;
+        border-collapse:separate;
+        border-spacing: 0px 8px;
+        margin-right:10%;
+        box-sizing:border-box;
+    }.newpost{  /*new post button*/
+        background-color: #C3C3C3;
+        box-sizing: border-box;
+        padding:4px 6px;
+        margin-right:2%;
+    }.newpost:active{
+        box-shadow: inset 2px 2px 0px #262626, inset -2px -2px 0px #F0F0F0, inset 4px 4px 0px #7E7E7E;
+    }.newpost:active>span{
+        border:2px black dotted;
+}.newpost:hover{
+    cursor:pointer;
+}
+.post-row{
+    box-shadow: inset 2px 2px 0px #262626, inset -2px -2px 0px #F0F0F0, inset 4px 4px 0px #7E7E7E;
+    align-items:center;
+    background-color: white;
+   
+}
+.inherit{
+    color:inherit;
+}
+
+.search{
+    display:inline-block;
+    width:39vw;
+}
+.innersearch{
+    width: 70%;
+}
+

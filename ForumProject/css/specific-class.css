@@ -1,0 +1,497 @@
+.search {   /*address bar outer box*/
+    background: #C3C3C3;
+    margin-left: 4px;
+    box-sizing: border-box;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 1.5em;
+    margin-right: 4px;
+}
+.innersearch{   /*address bar inner box*/
+    display:inline-block;
+    background:white;
+    height:1.3em;
+    margin-top:4px;
+    min-width:30%;
+}
+.titlecol{
+    max-width: 40vw;
+}
+.header {   /*"website name"*/
+    color:white;
+    position: relative;
+    width: 330px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.desktop:hover>span>#folder {   /*hover over folder, make it open*/
+    content: url(../img/directory_open.png);
+}
+
+.desktop:active {   /*click on folder, goes blue!*/
+    background-color: #02007F;
+    color: white;
+}
+
+.desktop {  /*topic links*/
+    text-decoration: none;
+    color: black;
+}
+
+.explorer { /*inner windows "explorers"*/
+    height: 100%;
+    width: auto;
+    min-width:35vmin;
+    box-sizing: border-box;
+    padding: 5px 5px;
+    padding-bottom: 1em;
+}
+
+.rectangles {   /*a lot of general use rectangles*/
+    background: white;
+    margin: 0px 4px;
+    box-sizing: border-box;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 100%;
+    width: 100%;
+}
+
+.top {  /*explorer titles*/
+    padding: 2px 4px 10px 8px;
+    gap: 4px;
+    position: relative;
+    height: 0.9em;
+    width: 96%;
+    color: white;
+    border-bottom: #C3C3C3 4px solid;
+    /* blue 200 */
+    background: #02007F;
+}
+
+.desktop:hover>span>.icons {    /*all post icons are inline*/
+    display: inline;
+    animation: float 0.5s infinite linear;
+}
+
+.desktop:hover {    /*hover over post icons*/
+    border: 2px black dotted;
+}
+
+.desktop:hover>.topic {   /*rainbow fun times*/
+    /* animation properties */
+    animation: rainbow 2s infinite;
+    transform: translateX(5px);
+}
+.topic{
+    transition: transform 0.3s;
+}
+.scrolltext {   /*announcement banner*/
+    /* animation properties */
+
+    transform: translateX(100%);
+    animation: my-animation 20s infinite linear;
+}
+.top-buttons {  /*close minimise and fullscreen buttons*/
+    background-color: #C3C3C3;
+    height: 1.1em;
+    width: 1.1em;
+    text-align: center;
+    display: inline;
+    line-height: 100%;
+    padding-right: 2px;
+    box-sizing: border-box;
+    box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
+}.top-buttons img{
+    max-width: 80%;
+height: auto;
+}
+
+.top-buttons:active {   /*click on those buttons*/
+    box-shadow: inset 2px 2px 0px #262626, inset -2px -2px 0px #F0F0F0, inset 4px 4px 0px #7E7E7E;
+    padding-right: 0px;
+    padding-left: 2px;
+    line-height: 32px;
+}
+.title{     /*Page titles*/
+    margin-bottom:0.1em;
+    text-align:center;
+}
+.icons{     /*topic icons*/
+    display:none;
+    max-height:1.5em;
+    max-width:1.5em;
+    position:absolute;
+    left:0.8em;
+    top:0px;
+}
+.icons2{
+    max-height:1.5em;
+    max-width:1.5em;
+}
+tr:hover .icons2{
+    animation:float 0.5s infinite ease-in-out;
+}
+.hoverimg{  /*posts*/
+    position:relative;  
+}
+.mainImage{
+    animation: float 0.5s infinite ease-in-out;
+    max-width:2em;
+    height:0.8em;
+}
+@keyframes float{
+    0%{transform: initial;
+        transform: translateY(0);}
+    50%{transform:scaleX(initial);
+        transform: translateY(5px); }
+    100%{transform:scaleX(initial);
+        transform: translateY(0); }
+}
+.posts-main{
+    background-color: #C3C3C3;
+    width:88%;
+    max-width:88%;
+    margin:12px 0 12px 0px;
+    box-sizing: border-box;
+    padding: 4px 4px 12px 4px;
+    font-size:1.1em;
+}
+.post-top{
+padding: 2px 4px 2px 8px;
+gap: 4px;
+position: relative;
+margin:4px 8px;
+margin-left:4px;
+color: white;
+display:flex;
+align-items: flex-start;
+justify-content: space-between;
+/* blue 200 */
+background: #02007F;
+height:auto;}
+.posts-body{
+    margin:4px 8px;
+    margin-left:4px;
+    background: white;
+    box-sizing: border-box;
+    padding:8px;
+    height: 100%;
+    width: 99%;
+}
+.post-pic{
+    font-size:0.7em;
+    width:5%;
+}
+.post-image{
+    max-height:100px;
+    max-width:100px;
+}
+.reply-image{
+    max-height:32px;
+    max-width:32px;
+}
+.post-pic img{
+    width:80%;
+}.post-title{
+    max-width:70%;
+}
+.post-block{
+    align-items: center;
+    display: flex;
+    justify-content: left;
+    gap:12px;
+    margin: 12px 12px 12px 8px;
+}
+.posts-reply{
+    background-color: #C3C3C3;
+    width:auto;
+    box-sizing: border-box;
+    padding: 4px 4px 12px 4px;
+    position:relative;
+    margin-left:4%;
+}
+ul{
+    list-style-type:none;
+
+}
+.reply-username{
+    vertical-align: top;
+}
+.thread-nav-main{
+    display: block;
+    position: absolute;
+    left: calc(4.5% + 28px);
+    width: 4px;
+    height: calc(100% - 16px);
+    background-color: #4e4d81;
+    background-clip: padding-box;
+    z-index: 3;
+    top: 12px;
+}
+
+.thread-nav-reply{
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: calc(4% + 40px);
+    width: 4px;
+    height: calc(100% - 16px);
+    background-color: #52314a;
+    background-clip: padding-box;
+    z-index: 3;
+}
+.replies{
+    display:block;
+    position:relative;
+}.replies li{
+    margin-left:-25px;
+}
+.work{
+    height:auto;
+    position:relative;
+}
+.reply-date{
+    float:right;
+}
+
+.profileImgSelect{
+    margin-left: 4px;
+    margin-top: 4px;
+}
+.profileImgSelect:hover{
+   border: 2px dotted black;
+
+}
+.postbox { /*inner windows "explorers"*/
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 5px;
+}
+.postbox form{width:100%;}
+.rulebox{
+    height:100%;
+    margin: 12px 12px 0px 8px;
+    text-align: center;
+    z-index: 3;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    display:table-cell;
+    min-width: 9vw;
+}
+.rulebox ol{
+    text-align: left;
+    padding-left:30px;
+
+}.rulebox ul{
+    text-align:center;
+    padding-left:00px;
+}.tagDesc{
+    display:none;
+    color:black;
+    position:absolute;
+    z-index:10;
+    top: 0;
+    left:80%;
+    width:200%;
+    background-color:#C3C3C3;
+}
+.tag{
+    position:relative;
+}
+
+.discussion{
+    color:forestgreen;
+}
+.spoiler{
+    color:#FF9C2D;
+}
+.question{
+    color:#ff008c;
+}
+.suggestion{
+    color:#0026ff;
+}
+.admin{
+    color:red;
+}.topicBio{
+  color: black;
+  text-align: center;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em rgb(0, 0, 0) solid; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */ /* Adjust as needed */
+  animation: typing 7.5s steps(60), blink .5s step-end infinite alternate;
+  width:fit-content;
+  font-size:0.6em;
+  max-width:100%;
+
+}
+
+@keyframes typing {
+  from {
+    max-width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+.postButton{
+    background-color: #c3c3c3;
+    border:none;
+    font-family:ms;
+    font-size:1em;
+    padding:4px 12px;
+    margin:12px;
+}
+.postButton:hover{
+    cursor:pointer;
+}
+.postButton:active{
+    box-shadow: inset 2px 2px 0px #262626, inset -2px -2px 0px #F0F0F0, inset 4px 4px 0px #7E7E7E;
+}.replyButton{
+    background-color: #C3C3C3;
+    font-size:0.6em;
+    padding:2px 6px;
+    margin-left:8px;
+}.replyButton:active{
+    box-shadow: inset 2px 2px 0px #262626, inset -2px -2px 0px #F0F0F0, inset 4px 4px 0px #7E7E7E;
+}.replyButton:hover{
+    cursor:pointer;
+}.accountBody>tr>td{  
+    text-align:center;
+}.accountbox{
+    width: 9vw;
+    min-height: 73vh;
+    min-width:9vw;
+    margin: 12px 12px 0px 8px;
+    text-align: center;
+    z-index: 3;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    display:table-cell;
+}.accountTable{ 
+    width:100%;
+    border-collapse:separate;
+    border-spacing: 0px 8px;
+    margin-right:10%;
+
+}.account-row{
+    box-shadow: inset 2px 2px 0px #262626, inset -2px -2px 0px #F0F0F0, inset 4px 4px 0px #7E7E7E;
+    align-items:center;
+    background-color: white;
+   
+}.accountChangePopup{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 40vh;
+    left: 40vw;
+    width: 20%;
+    height: auto;
+    background-color: #C3C3C3;
+    justify-content:space-around;
+    flex-direction:column;
+    align-items:center; 
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    display: none;
+}.accountChangeForm{
+    text-align: center;
+}.accountChangePopup .top{
+    margin:4px;
+    height:auto;
+    }
+    .footer-box{
+        clear:both;
+    }
+    .admin-buttons{
+        width: 4vmin;
+        background-color: #c3c3c3;
+        display: inline-block;
+        height: 4vmin;
+        vertical-align: middle;
+        text-align: center;
+        color: black;
+        font-weight: bold;
+        transition: color 0.2s;
+      }
+      .admin-buttons:hover{
+        color:red;
+      }.admin-buttons:hover img{
+        filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(1000%) contrast(0.8);
+      }
+      .admin-buttons:active{
+        box-shadow: inset 2px 2px 0px #262626, inset -2px -2px 0px #F0F0F0, inset 4px 4px 0px #7E7E7E;
+      }
+      .admin-buttons img{
+        width:32px;
+        max-height:32px;
+          filter:grayscale(100); 
+      }
+      .flip{
+        transform:scaleX(-1);
+      }
+.reportpopup{
+    position: fixed;
+    z-index: 10;
+    top: 40vh;
+    left: 35vw;
+    width: 30vw;
+    height: auto;
+    min-height:25vh;
+    display:none;
+    text-align: left;
+    box-sizing: border-box;
+    padding:4px;
+    background-color: #C3C3C3;
+}.reportpopup .top{
+    display:block;
+    width:98%;
+}
+.reportpopup textarea{
+    width:90%;
+    height:50%;
+}
+.flexbox{
+    display: table;
+    border-spacing: 12px;
+    width:auto;
+    min-height:80vh;
+    height:auto;
+    overflow:auto;
+}
+.trend-test{
+    width:auto;
+    display:inline-block;
+    padding:4px;
+    text-align: center;
+    margin:1em;
+    align-self: center;
+}.topic-select{
+    display: flex;
+    justify-content:space-around;
+     height:auto; 
+     gap:10px;
+     flex-wrap:wrap;
+     
+}.trending th{
+    box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E, inset 4px 4px 0px #B1B1B1;
+    padding:0 6px;
+}.trending tbody{
+    background:white;
+}.trending{
+    border-collapse:collapse;
+    text-align: left;
+}
+.trending td{
+    padding:0 6px;
+}

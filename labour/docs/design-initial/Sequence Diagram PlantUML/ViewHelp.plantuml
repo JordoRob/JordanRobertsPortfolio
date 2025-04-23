@@ -1,0 +1,12 @@
+@startuml
+Participant User
+Participant Client
+
+title View Help
+
+User->Client: Clicks "Help" tab
+Client->User: Displays the help page
+
+Client->Server: Request help page content
+Server->Client: Returns HTML to client
+@enduml

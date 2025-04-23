@@ -1,0 +1,28 @@
+@startuml
+Participant User
+Participant Client
+Participant Server
+Participant Database
+Participant CSVGenerator
+title Export CSV sequence diagram
+
+User->Client: Clicks on "Export CSV" button
+Client->>Server: equest for job history
+Server->>Database: Query for job history
+Database-->>Server:Sends job history
+
+activate Server
+Server->>CSVGenerator:  Generate CSV
+alt Success
+    activate CSVGenerator
+    CSVGenerator-->>Server: Return CSV file
+    Server-->>Client: Sends CSV file
+else Failure
+    Server-->>Client: Sends error message
+end
+deactivate Server
+
+Client->User: Download CSV file / View error message
+
+
+@enduml

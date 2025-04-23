@@ -1,0 +1,798 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    font-weight: lighter;
+    font-family: 'Calibri', sans-serif;
+    vertical-align: baseline;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+/* resetting bootstrap default styles, leaving here just in case */
+/* a:hover {
+    color:black;
+}
+*, ::after, ::before {
+    box-sizing: initial;
+}
+input:not([type="image" i]) {
+    box-sizing: border-box;
+} */
+
+a {
+    color: black;
+}
+
+body {
+    font-family: Georgia, serif;
+    font-weight: lighter;
+    /* background-image: url(/src/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
+}
+
+.main-body {
+    position: fixed;
+    top: 5em;
+    width: 100%;
+
+    box-sizing: border-box;
+    padding: 0 1vw;
+}
+
+.main-body h3 {
+    font-size: 175%;
+    font-weight: bolder;
+}
+
+.main-body h4 {
+    font-size: 110%;
+}
+
+.main-body form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 40em;
+    width: 100%;
+    gap: 10%;
+}
+
+.input-wrapper input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px black solid;
+    box-shadow: none;
+    color: black;
+    font: inherit;
+    font-size: 110%;
+    padding-bottom: .25rem;
+    padding-top: .25rem;
+    width: 80%;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    font-size: 110%;
+    padding: 1vw;
+    width: 50%;
+    height: 40%;
+    box-sizing: border-box;
+    align-items: center;    
+    backdrop-filter: blur(18px);
+    background-color: rgb(255 255 255 / 66%);
+}
+
+.error {
+    color: #d23127;
+}
+
+.button2 {
+    width: 10%;
+    height: 10%;
+    border: none;
+    background: #d23127;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    font-size: 120%;
+    font-weight: bolder;
+    color: white;
+}
+
+.button2:hover {
+    background: #FFD8D6;
+    transition: 0.5s;
+    cursor: pointer;
+    color: black;
+}
+
+button {
+    align-content: center;
+    box-sizing: content-box;
+    border: 2px transparent;
+    background: rgb(255 255 255 / 60%);
+    border-radius: 0.3em;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: #b6ddff;
+    cursor: pointer;
+}
+
+button[type="cancel"]:hover {
+    background: #ffcdca;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    border: 2px solid;
+    min-width: 5vw;
+    width: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    right: 0;
+    top: 2.8em;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(18px);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-content a:nth-child(1) {
+    /* border-top-left-radius: 16px;*/
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover:not(.dropdown-selected) {
+    background-color: #FFD8D6;
+    cursor: pointer;
+}
+
+.dropdown-selected {
+    background-color: #d23127;
+    color: white;
+}
+
+.dropbtn img {
+    width: auto;
+    height: 2em;
+}
+
+.dropbtn {
+    padding: 0.2em;
+}
+
+.main-overlay {
+    position: absolute;
+    width: 60em;
+    height: 35em;
+    left: 0;
+    right: 0;
+    top: -3em;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(18px);
+    padding: 1em;
+    box-sizing: border-box;
+    border: 2px solid black;
+    z-index: 6;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.overlay_assignments_wrapper {
+    float: left;
+    height: 32em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.2em;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0.5em;
+    box-sizing: border-box;
+    width: 13.3em;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.overlay_assignment {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    border-bottom: 1px solid black;
+    padding: 0.2em;
+    box-sizing: border-box;
+
+    width: 100%;
+}
+
+.assignment_title {
+    background-color: #d1ecff;
+    ;
+    font-size: 130%;
+    box-sizing: border-box;
+    padding: 0.2em;
+    width: 100%;
+    text-align: center;
+}
+
+.assignment_job_title {
+    font-weight: bold;
+}
+.assignment-assigner{
+    font-size:75%;
+    font-style: italic;
+}
+
+.info-wrapper {
+    margin-left: 1em;
+    float: left;
+    width: 43em;
+}
+
+.overlay_profile_pic_wrapper {
+    position: relative;
+}
+
+.overlay_profile_pic {
+    width: 8em;
+    height: 8em;
+    border: 0.5em solid #d23127;
+    border-radius: 100%;
+}
+
+.overlay_head {
+    display: flex;
+    align-items: center;
+    margin: .5em;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.overlay_head_text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5em;
+    text-align: right;
+}
+
+.overlay_head select {
+    width: 10em;
+    text-align: right;
+    left: 12em;
+}
+
+.info-name {
+    font-size: 250%;
+    margin-right: 0.3em;
+    position: relative;
+}
+
+.info-line {
+    position: relative;
+    bottom: 0.5em;
+    width: 101%;
+    height: 0.5em;
+    background: #D23127;
+    margin: 0.5em 0em;
+}
+
+.info-subheading {
+    font-size: 150%;
+    position: relative;
+    bottom: .5em;
+    margin-right: 0.3em;
+}
+
+.overlay_info_cards {
+    display: flex;
+    justify-content: start;
+    gap: 1em;
+    margin: 0.5em;
+}
+
+.overlay_card {
+    width: 6em;
+    height: 1.5em;
+    font-size: 150%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    line-height: 1.5em;
+    color: white;
+    transition-duration: 2s;
+}
+
+.overlay-button {
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 150%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    line-height: 1.5em;
+    color: white;
+}
+
+.overlay-button:hover {
+    cursor: pointer;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: #D23127 2px solid;
+}
+
+.overlay_info_cards img.overlay-button:first-of-type {
+    margin-left: auto;
+}
+
+#overlay_delete, #overlay_archive, #overlay_unarchive {
+    visibility: hidden;
+}
+
+.card-active {
+    background-color: #1d9f51;
+}
+
+.card-inactive {
+    background-color: #D23127;
+}
+
+.card-in-school {
+    background-color: #d4a93e;
+}
+
+.card-assigned {
+    background-color: #3989d3;
+}
+
+.card-unassigned {
+    background-color: gray;
+}
+
+.card-archived {
+    background-color: #264653;
+}
+
+.overlay_info_box {
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    height: 3em;
+    background-color: rgba(255, 255, 255, 0.60);  
+    width: 20.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0.2em;
+    overflow: visible;
+    position: relative;
+}
+
+.overlay_info_box input {
+    width: 100%;
+    height: 100%;    
+}
+
+.overlay_info_box_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5em;
+    flex-wrap: wrap;
+    margin: 0.5em;
+    margin-top: 0.75em;
+}
+
+.overlay_info_box>span:first-child {
+    font-weight: bold;
+}
+
+.overlay_notes {
+    width: 100%;
+    height: 10em;
+    box-sizing: border-box;
+    padding: 0.5em;
+    margin-top: 0.75em;
+}
+
+#notes_datafield,#job-notes-datafield {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px black solid;
+    font-size: 110%;
+}
+
+.overlay_notes span, .job_overlay_notes span {
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.overlay_notes textarea:focus {
+    outline: solid #D23127 2px;
+}
+
+.close_overlay {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    border: black 2px solid;
+}
+
+.close_overlay:hover {
+    background-color: #D23127;
+}
+
+.overlay_mask {
+    position: absolute;
+    display: hidden;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+}
+
+.overlay_double_wrapper {
+    width: 20.5em;
+    display: flex;
+    gap: 1em;
+
+}
+
+#file_upload_label {
+    cursor: pointer;
+    display: block;
+    bottom: 0;
+    right: 0;
+    left: 0.4em;
+    width: 8.1em;
+    height: 8.1em;
+    position: absolute;
+    top: 0.43em;
+    border: 0.5em transparent;
+    border-radius: 100%;
+}
+
+#file_upload_label span {
+    display: none;
+    text-align: center;
+    margin-top: 30%;
+    color: white;
+    font-weight: bold;
+}
+
+#file_upload_label:hover {
+    background: #5555559f;
+}
+
+#file_upload_label:hover span {
+    display: block;
+}
+
+.main-overlay input {
+    background-color: transparent;
+    border: 1px solid #b6b6b6;
+}
+
+.main-overlay select {
+    background-color: transparent;
+    border: 1px solid #b6b6b6;
+}
+
+/* some general buttons, used in batch add job and add job */
+.btn-confirm, .btn-cancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    background-color: transparent;
+    font-size: 100%;
+    border: 1px solid;
+    border-radius: 0;
+    padding: 1em;
+    box-shadow: unset;
+}
+/* confirm button hover (left temp_hover in here in case it's used somewhere in batch add)*/
+.btn-confirm.temp_hover:hover, .btn-confirm.hover-confirm:hover {
+    background-color: rgba(0, 255, 0, 0.33);
+    cursor: pointer;
+}
+/* cancel button hover */
+.btn-cancel.hover-cancel:hover, #add_emp_button_reset:hover {
+    background-color: rgba(194, 0, 0, 0.452);
+    cursor: pointer;
+}
+
+/* bootstrap styles i stole lol */
+/* i've modified some but feel free to modify them more */
+.d-none {
+    display:none;
+}
+.is-valid {
+    border-color: #198754 !important;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("/src/img/validation/valid.svg");;
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+.is-invalid {
+    border-color: #dc3545 !important;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("/src/img/validation/invalid.svg");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+input[required]:not(.is-invalid, .is-valid) {
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("/src/img/validation/required.svg");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.3em + 0.375rem) calc(0.3em + 0.375rem);
+}
+
+input[required]:not(.is-invalid, .is-valid):hover {
+    background-image: url("/src/img/validation/required-hover.svg");
+}
+.is-invalid~.invalid-feedback{
+    /* display: block; */
+    visibility: visible;
+}
+.invalid-feedback {
+    /* display: none; */
+    visibility: hidden;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: .875rem !important;
+    color: #dc3545;
+}
+.m-2 {
+    margin: 0.5rem!important;
+}
+.form-floating {
+    position: relative;
+}
+#job-form-title {
+    font-size: 2.5rem;
+}
+is-valid:focus {
+    border-color: #198754ab !important; 
+    box-shadow: 0 0 0 0.25rem rgba(25,135,84,.25);
+}
+.form-input:focus, .focussed {
+    border-color: #86b7fe !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    z-index: 1;
+}
+input, textarea, button, select {font-family: inherit}
+
+#message_container {
+    position: absolute;
+    bottom: 5em;
+    left: 1em;
+    z-index: 5;
+    
+    width: 20em;
+
+    background-color: rgba(255, 255, 255, 0.66);
+    backdrop-filter: blur(18px);
+    border: 1px solid black;
+}
+
+.ajax_message {
+    padding: 1em;    
+}
+
+#time-until-refresh {
+    color: gray;
+    align-self:center;
+    font-size: 0.7em;
+}
+
+#name_datafield {
+    text-align: right;
+}
+
+.overlay_double_wrapper {
+    width: 20.5em;
+    display: flex;
+    gap: 1em;
+}
+
+.overlay_job_info_wrapper {
+    width: 45%;
+    display: flex;
+    justify-content: left;
+
+    flex-wrap:wrap;
+    gap:1em;
+}#refresh_counter{
+position:absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-family: monospace;
+font-size:90%;
+transition: 1s linear;
+}#refresh_button{
+position:relative;
+text-align: center;
+}
+.refresh_transition{
+    transition: 0.5s linear;
+}.refresh_updates{
+    font-weight:bold;
+    filter:invert(90%) sepia(6%) saturate(2462%) hue-rotate(84deg) brightness(87%) contrast(84%);
+}
+
+#status-dropdown-content {
+    border: none;
+    top: 2.6rem;
+    background: none;
+}
+
+.status-drop .overlay_card {
+    transition-duration: 0.5s;
+}
+
+#status-dropdown-content .overlay_card {
+    margin-top: 0.2rem;
+    border: 2px solid rgba(0, 0, 0, 0);
+    filter: opacity(70%);
+    backdrop-filter: blur(18px);
+}
+
+#status-dropdown-content .overlay_card:hover {
+    filter: opacity(100%);
+    border-color: black;
+}
+
+.status-drop .overlay_card:hover {
+    cursor: pointer;
+}
+
+.status-drop #status-datafield {
+    border: 2px solid black;
+}
+
+.status-drop #status-datafield:hover {
+    border-color: aliceblue !important;
+}
+
+.status-drop #status-datafield::before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    border: 5px solid;
+    border-top-color: currentcolor;
+    border-left-color: currentcolor;
+    border-top-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    margin-top: -2.5px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all ease-in-out 0.2s;
+}
+
+.status-drop.open #status-datafield::before {
+    transform: rotate(-135deg);
+
+}

@@ -1,0 +1,78 @@
+#window{position: absolute; /*entire window*/
+    width: 80vw;
+    min-height: 92vh;
+    height:auto;
+    top:5%;
+    left:10%;
+    /* mono 100 */
+    background: #C3C3C3;
+box-sizing:border-box;
+padding-bottom:1%;
+overflow-wrap: break-word;
+overflow-inline:auto;}
+    #topbar{    /*i swear i have like 8 classes and ids for this? but the blue bar at the top*/
+        display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 4px 5px 8px;
+    gap: 4px;
+    
+    position: relative;
+    height: 1.1em;
+    margin: 4px;
+    margin-bottom:0px;
+    /* blue 200 */
+    background: #02007F;
+    }#main{     /*main rectangle*/
+        width:auto;
+        min-height:74vh;
+        padding-right:4px;
+        background-color:#C3C3C3;
+        overflow:auto;
+        margin:8px;
+    }#folder{       /*folders!*/
+        position:relative;
+        content: url(../img/directory_close.png);
+        max-width:2em;
+        max-height:2em;
+        font-size: 100px;
+        margin-right:8px;
+        margin-left:5px;
+    }#joke{     /*heh you can close the window*/
+        margin-top:40vh;
+        display:flex;
+        justify-content:space-around;
+        flex-direction:column;
+        align-items:center; 
+        vertical-align: middle;
+    }#joke>img:active{
+        border:black 2px dotted;
+    }
+#main2{     /*main rectangle*/
+    height: 100%;
+    padding-right: 4px;
+    background-color: #C3C3C3;
+    overflow: auto;
+    min-height: 80vh;
+    display:table-cell;
+    box-sizing: border-box;
+    max-width: 69vw;
+}#postTitle{
+    width:50%;
+    padding:2px 6px;
+}#post{
+    padding:2px 6px;
+    width:95%;
+}#stats{
+    border:2px dotted black;
+    border-spacing:0.5em;
+}
+#stats th{
+    box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E, inset 4px 4px 0px #B1B1B1;
+    padding-top:2px;
+    width:25%;
+}#stats td{
+    box-shadow: inset 2px 2px 0px #262626, inset -2px -2px 0px #F0F0F0, inset 4px 4px 0px #7E7E7E;
+    width:20%;
+}

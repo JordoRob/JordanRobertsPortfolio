@@ -1,0 +1,238 @@
+body{
+    font-family: url('../Workbench.ttf');
+    font-size: 0.6vw;
+}
+
+#gameArea{
+    width: 100%;
+    height: 79vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    margin-top:3%;
+    background-size:cover;
+   
+}
+#background{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+#foreground{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.info{
+    background-color: rgb(0, 0, 44);
+    position:absolute;
+    bottom:10%;
+    left:50%;
+    transform:translateX(-50%);
+    width: 45%;
+    height: 95%;
+    border-radius: 12px;
+    transition:1s linear;
+    z-index: 11;
+    color:yellow;
+    font-size:180%;
+    padding:1vh;
+    padding-right:2%;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    box-shadow: inset 0 0 10px #000000;
+    text-align: left;
+}.info:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 4vh 4vh 0;
+    border-style: solid;
+    border-color: rgb(0, 0, 85) rgb(45, 40, 55);
+}
+body{
+    background-color: rgb(45, 40, 55);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}.blink{
+    animation: blink 2s linear infinite;
+}
+@keyframes blink{
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    20%{
+        opacity: 0;
+    }   
+    30%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 0;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+
+}
+#bottomBar{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 12vh;
+    background: rgb(45, 40, 55);
+}#topBar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 6vh;
+    background: rgb(45, 40, 55);
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}.asteroid{
+    z-index: 3;
+}.healthContainer{
+    width:18vh;
+    height:100%;
+    display:flex;
+    flex-direction: row;
+    gap:1vh;
+    justify-content: left;
+    margin-left:0.5vh;
+    margin-top:0.5vh;
+}.healthIcon{
+    width: 5vh;
+    height:5vh;
+}
+
+
+.gameOver{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width: 50%;
+    height: 50%;
+    background-color: rgba(114, 0, 0, 0.253);
+    color:white;
+    text-align: center;
+    border-radius: 12px;
+    transition:1s linear;
+    z-index: 11;
+    font-size: 300%;
+}
+/* CSS */
+.button-59 {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  height: 64px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 240px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-59:focus {
+  color: #171e29;
+}
+
+.button-59:hover {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+.button-59:active {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+@media (min-width: 768px) {
+  .button-59 {
+    min-width: 170px;
+  }
+}
+.scoreCont{
+    font-size:300%;
+    color:rgb(114, 97, 160);
+    margin-left:0.5vh;
+    margin-top:0.7vh;
+}
+#collection{
+    width:50vh;
+    margin:0.5vh;
+    box-shadow: inset 0 0 10px #000000;
+    gap:0.5vh;
+    overflow:hidden;
+    border-radius: 4px;
+}
+.collectionIMG{
+    margin:0.3vh;
+}
+#collection2{
+    width:40%;
+    height:20%;
+    margin-left: 50%;
+    transform:translate(-50%);
+    box-shadow: inset 0 0 10px #000000;
+    margin-bottom:2vh;
+}#homeButton{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width: 20vh;
+    font-size: 200%;
+    color:rgb(114, 97, 160);
+    text-decoration: none;
+}

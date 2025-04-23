@@ -1,0 +1,215 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url('https://fonts.cdnfonts.com/css/bauhaus-93');
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 1.5vw;
+font-family: "Avenir", sans-serif;
+font-weight: bold;
+	vertical-align: baseline;
+    text-decoration: none;
+}
+.bauhaus *, .bauhaus{
+    font-family: 'Bauhaus 93', sans-serif;
+    font-weight: normal;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.title-column{
+    background-color: #E85C41;
+    width:40%;
+    color:#152414;
+}
+
+.main{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    gap:0;
+    background-color: #EEF0E5;
+}.nav-column{
+    height:100%;
+    width:15%;
+    color:#d1c39d;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:right;
+
+
+}
+.main-column{
+    background-color: #B6C4B6;
+}
+.nav-column-list{
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+    width:100%;
+    align-content: end;
+    gap:1vh;
+    margin-bottom:24px;
+}
+.list-item{
+    height:8vh;
+    width:90%;
+    background-color: #B6C4B6;
+    margin-left:auto;
+    border-radius: 10px;
+    font-size:200%;
+    transition:0.2s ease-in-out;
+}
+.list-item>a{
+    color:#152414;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    width:100%;
+
+}
+.list-item:hover{
+    background-color: #304D30;
+    width:100%;
+}
+.list-item-selected{
+    background-color: #304D30;
+    width:100%;
+
+}
+.main-column{
+    width:85%;
+    margin:24px;
+    border:3px solid black;
+    overflow:auto;
+    height:95%;
+}
+.nav-column-header-text{
+    font-size:2em;
+    color:#152414;
+    text-align:right;
+    padding-right:0.1em;
+}
+.nav-column-header{
+text-align: right;
+}
+.header{
+    color:#152414;
+    text-align:center;
+    display:flex;
+    flex-direction: row;
+    justify-content: center ;
+    box-sizing: border-box ;
+    padding: 1% 0;
+    align-items:center;
+    gap:10em;
+}
+.header figcaption{
+    font-size:1vw;
+}
+.hello{
+    font-size: 5em;
+}
+.main-text-right{
+color: #EEF0E5;
+  text-align: left;
+  width: 70%;
+  display: block;
+  margin-left: 30%;
+  background-color: #304D30;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding: 10px;
+
+.main-text-left{
+    color: #EEF0E5;
+  text-align: left;
+  width: 70%;
+  display: block;
+  margin-right: 30%;
+  background-color: #152414;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.container-1{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:1.5em;
+    box-sizing: border-box;
+  padding: 0 0.5em;
+}
+.container-2{
+    display:block;
+    width:100%;
+    height:100%;
+}
+.profile-image{
+    width: 10%;
+    border-radius: 100%;
+}
+.arrow{
+    display:inline;
+    width:10%;
+    filter: invert(10%) sepia(12%) saturate(1871%) hue-rotate(68deg) brightness(97%) contrast(93%);
+    float:right;
+}
+.smaller{
+    font-size:2vw;
+    padding-top:0;
+}
+.main-text-left-wide{
+    font-size:4vw;
+    color:#152414;
+    text-align:left;
+    width:90%;
+    display:block;
+    margin-right:29%;
+    padding-top:5%;
+}
+.email{
+    color:#EEF0E5
+}

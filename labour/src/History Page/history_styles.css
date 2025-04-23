@@ -1,0 +1,69 @@
+.canvas_container {
+    width: 100%
+}
+
+#job-wrapper {
+    height: calc(100vh - 10em);
+}
+
+.ct-axis-x .ct-labels {
+    display: none;
+}
+
+.job_listing {
+    height: 6em;
+}
+
+/* give top job a bit more height to cope with the added legend */
+.job_listing.top-job {
+    height: 7.2em;
+}
+/* give bottom job a bit more height to cope with the added x-axis */
+.job_listing.bottom-job {
+    height: 9.8em;
+}
+
+/* archived job styles */
+.job_info.archived {
+    background-color: rgba(44, 22, 22, 0.13);
+}
+
+.job_listing:nth-child(2n+1) .job_info.archived {
+    background-color: rgba(14, 42, 65, 0.13);
+}
+
+.job_info.archived:hover {
+    background: rgba(90, 22, 17, 0.25);
+}
+
+.job_listing:nth-child(2n+1) .job_info.archived:hover {
+    background: rgba(0, 66, 114, 0.25);
+}
+
+
+.edit-filter button input {
+    width: 4em;
+    border: transparent;
+    font-size: 150%;
+    padding: 0 0.3em;
+    background: transparent;
+}
+
+#history-loading-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff73;
+    backdrop-filter: blur(4px);
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+}
+
+#history-loading-block img {
+    width: 4em;
+    object-fit: contain;
+}

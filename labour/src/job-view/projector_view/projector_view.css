@@ -1,0 +1,53 @@
+#inactive-listings,
+#in-school-listings {
+    min-height: 3em;
+    height: calc(100% - 1.5em);
+}
+
+
+
+
+.long-name::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: sidescroll 20s linear infinite;
+    animation-timing-function: cubic-bezier(0.7, 0, 0.75, 1);
+}
+
+.long-name::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: sidescroll2 20s linear infinite;
+    animation-timing-function: cubic-bezier(0.3, 0, 0.25, 1);
+}
+
+@keyframes sidescroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    70% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes sidescroll2 {
+    0% {
+        transform: translateX(100%);
+    }
+    30% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}

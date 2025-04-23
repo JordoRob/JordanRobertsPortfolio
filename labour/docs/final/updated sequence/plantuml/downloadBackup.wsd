@@ -1,0 +1,21 @@
+@startuml
+skin rose
+skinparam participantPadding 20
+skinparam participantBorderColor black
+
+title Download Backup Sequence Diagram
+
+actor User
+participant Client
+participant Server
+participant Database
+
+User -> Client: Clicks on "Download Backup" button
+Client -> Client: Validates user as admin
+Client -> Server: Request: Backup Generation
+Server -> Database: Execute mysqldump command
+Database -> Server: Returns the command output
+Server -> Server: Generate the .sql file by storing the command output
+Server --> Client: pass .sql file 
+Client -> User: browser download for the generated .sql backup file
+@enduml

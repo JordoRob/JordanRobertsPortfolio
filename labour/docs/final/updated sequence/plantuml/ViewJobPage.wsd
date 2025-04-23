@@ -1,0 +1,117 @@
+@startuml
+
+skin rose
+
+title View Job Page Sequence Diagram
+
+Actor User
+Participant Client 
+Participant Server
+Database Database AS DB
+
+User -> Client: Navigates to job tab
+Client -> Server: Requests job page
+Client <- Server: Returns job page skeleton (no data yet)
+User <- Client: job page skeleton (briefly)
+
+Client -> Client: set default sort and order params for jobs
+
+== ajax_search() ==
+Client -> Client: <font color=purple> ajax_search() 
+
+Client ->> Server: generate_job_listing.php with search, sort, and order params
+Server -> DB: SELECT jobs (titles, start/end date, sum of emps)\nWHERE not archived and (title or an emp name = search param)\n ORDER BY sort and order params
+return job info
+
+loop for each job
+    Server -> DB : get emps (name, role, img, id) working on job
+    return emp info
+    Server -> Server: start generating HTML to return
+    Server -> Server: add on job info HTML
+    Server -> Server: add on employee wrapper
+    loop for each emp
+        Server -> Server: add on employee HTML\n(keep track of duplicates)
+    end
+    Server -> Server: add on employee sum and num of actual emps (no dupes)
+    Server -> DB: get outlooks (date, count) for job
+    return outlook info
+    loop for each outlook
+        Server -> Server: calculate if outlook is before job start, job start, job end, or after job end
+        Server -> Server: calculate if outlook is meeting, deficit, or surplus vs current emp sum
+        Server -> Server: add on outlook HTML
+    end
+end
+Client <-- Server: job HTML
+Client -> Client : highlights search text with <mark> regex
+User <- Client: generated job listings
+
+'newpage
+
+== ajax_employees() - updates Employee List (done here to pre-load it)==
+Client -> Client: <font color=purple> ajax_employees() 
+Client ->> Server: generate_employee_overlay.php with search and tab params
+
+alt tab == 0 (unassigned emps)
+    Server -> DB: SELECT emps (name,role,img,id) \nWHERE emp is active and unnasigned and name = search param and
+    return emp info
+    Server -> Server: generate title card and employee wrapper
+    loop for each emp
+        Server -> Server: add on employee HTML
+    end
+else else do all statuses
+    loop for each status
+        Server -> DB: SELECT emps (name,role,img,id) \nWHERE emp is active and name = search param 
+        return emp info
+        Server -> Server: generate title card and employee wrapper
+        loop for each emp
+            Server -> Server: add on employee HTML
+        end
+    end
+end
+
+Client <-- Server: generated emp list HTML 
+Client -> Client: populate employee list with HTML
+Client -> Client : highlights search text with <mark> regex
+
+== ajax_totals() ==
+Client -> Client: <font color=purple> ajax_totals() 
+Client ->> Server: generate_totals.php
+Server -> DB: SELECT sum of non-duplicated emps from all jobs
+return total current sum
+Server -> Server: generate HTML for total current sum
+Server -> DB: SELECT sum of all projections for next 12 months
+return projection sums
+
+loop for each month
+    Server -> Server: generate HTML for  eachprojection sum
+end
+Client <-- Server: generated totals HTML
+Client -> Client: display totals HTML + projection view button
+
+User <- Client: generated job totals
+
+'newpage
+
+== job_inactive_update() ==
+Client -> Client: <font color=purple> job_inactive_update() 
+Client -> Server: projector_view/grab_inactive.php
+Server -> DB: SELECT inactive employees
+return inactive employees
+Server -> DB: SELECT in school employees
+return in school employees
+
+loop for each inactive employee
+    Server -> Server: generate HTML for each inactive employee
+end
+loop for each in school employee
+    Server -> Server: generate HTML for each in school employee
+end
+
+Client <-- Server: generated HTML
+Client -> Client: display HTML in inactive/in-school listings above totals bar
+
+== ==
+
+Client -> Client: add event listeners for Employee List and search, order, and filter
+
+@enduml

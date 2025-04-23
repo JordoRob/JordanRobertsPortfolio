@@ -1,0 +1,26 @@
+@startuml
+
+skin rose
+
+title View Job Details
+
+Actor User
+Participant Client 
+Participant Server
+Database Database AS DB
+
+User -> Client: Clicks on a Job Card
+Client -> Server: Requests selected job data
+Server -> DB: Querys for job info and current assignments
+DB -> Server: Returns resultset
+Server -> Client: Returns Data formatted as HTML
+Client -> User: Displays job data in overlay
+Client -> Server: Requests historical assignment data
+Server <-> DB: Query
+Server -> Server: Process Data
+Server -> Client: Send formatted data
+Client -> Client: Process data into chartjs format
+Client -> Client: Generate Chart
+Client ->User: Create chart
+
+@enduml

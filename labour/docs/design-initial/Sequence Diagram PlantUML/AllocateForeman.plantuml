@@ -1,0 +1,25 @@
+@startuml
+Participant User
+Participant Client
+Participant Server
+Participant Database
+title Allocate Foreman Sequence diagram
+User->Client: Requests to enter edit view 
+Client->User: Displays edit view for the user
+
+User->Client: Drags and drops a foreman onto a job
+Client->>Server: Sends request to allocate foreman to job
+alt Success
+    activate Server
+    Server->Database: Update foreman allocation for the job
+    Database-->>Server: Confirmation of allocation update
+
+    Server-->>Client: Sends confirmation of allocation update
+else failure 
+        Server-->>Client: Sends error message
+
+end
+    deactivate Server
+
+Client->User: Displays the allocated forman on the job
+@enduml

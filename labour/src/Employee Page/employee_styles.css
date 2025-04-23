@@ -1,0 +1,309 @@
+.employee {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    height: 2.5em;
+    width: 10em;
+    /* min-width: 9.5em;
+    max-width: 100%; */
+    gap: 0.5vw;
+    border: 2px black solid;
+    padding-left: 4px;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+
+    /* Make target unselectable */
+    /* Chrome, Safari, Opera */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+
+    cursor: move;
+    /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.duplicated {
+    border: 2px black dotted;
+}
+
+.employee_details {
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    justify-content: space-between;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 0;
+    width: calc(100%);
+}
+
+.employee_img_wrapper {
+
+    align-self: center;
+}
+
+.employee img {
+    width: 2.1em;
+    height: 2.1em;
+    border: 0.15em solid #d23127;
+    border-radius: 100%;
+}
+
+
+.employee_details h1 {
+    font-size: 100%;
+    min-width: 0;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.long-name::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: sidescroll 20s linear infinite;
+    animation-timing-function: cubic-bezier(0.7, 0, 0.75, 1);
+}
+
+.long-name::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: sidescroll2 20s linear infinite;
+    animation-timing-function: cubic-bezier(0.3, 0, 0.25, 1);
+}
+
+@keyframes sidescroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    70% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes sidescroll2 {
+    0% {
+        transform: translateX(100%);
+    }
+    30% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.employee h1:hover {
+    margin-left: -100%;
+}
+
+.employee .employee_details>h1 {
+    -webkit-transition: 3.3s;
+    -moz-transition: 3.3s;
+    transition: 3.3s;
+
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    transition-timing-function: linear;
+    transition-property: margin-left;
+}
+
+.employee_details p {
+    font-size: 80%;
+}
+
+.employee {
+    background: white;
+}
+
+.employee:hover {
+    background: #e6e6e6;
+}
+
+.foreman {
+    background: #d1ecff;
+}
+
+.foreman:hover {
+    background: #b6e3ff;
+}
+
+.superintendent {
+    background: #ffcbcb
+}
+
+.superintendent:hover {
+    background: #ffb3b3;
+}
+
+.journeyman {
+    background: #FFE4AF;
+}
+
+.journeyman:hover {
+    background: #FFD88C;
+}
+
+.safety {
+    background: #bcffc9;
+}
+
+.safety:hover {
+    background: #97eb93;
+}
+
+.manager {
+    background: #e9d1ff;
+}
+
+.manager:hover {
+    background: #d6b3ff;
+}
+
+.section_title {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(0, 136, 255, 15%);
+    height: 2.5em;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 1%;
+    cursor: pointer;
+}
+
+.section_title_text h1 {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.employee_count p {
+    font-size: 225%;
+}
+
+.section_title:hover {
+    background-color: rgb(0, 136, 255, 25%);
+}
+
+#pin_bar_main {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    padding: 0 1%;
+    gap: 1em;
+    background-color: rgb(255 255 255 / 66%);
+}
+
+#pin_bar {
+    min-height: 4em;
+    align-content: center;
+    z-index: 1;
+}
+
+#pin_message {
+    font-size: 150%;
+    font-weight: bold;
+    color: #00000029;
+    white-space: nowrap;
+    position: absolute;
+    left: 3em;
+    /* Make target unselectable */
+    /* Chrome, Safari, Opera */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
+}
+
+#unpin_box {
+    position: fixed;
+    color: rgb(213, 32, 32);
+    left: 0;
+    bottom: 0;
+    z-index: 4;
+    display: none;
+    width: 10em;
+    height: 3.5rem;
+    border: 3px dotted red;
+    border-radius: 1em;
+}
+
+.pin_dropdown {
+    bottom: 2.5em;
+    left: unset;
+    right: unset;
+    top: unset;
+}
+
+#overlay_add_employee {
+    display: none;
+    width: 47.3em;
+    height: fit-content;
+    min-height: 35em;
+    z-index: 5;
+}
+
+.info-name input {
+    font-size: 1em;
+    width: 100%;
+}
+
+#info-title select {
+    font-size: 1em;
+}
+
+.add_emp_button {
+    float: right;
+    margin-top: 0.85em;
+    font-size: 125%;
+    border-radius: 0;
+    background-color: rgba(0, 255, 0, 0);
+    box-shadow: none;
+    padding: 0.5em;
+    border: 1px solid black;
+    margin-right: 0.5em;
+}
+
+#add_emp_button:hover {
+    background-color: rgba(0, 255, 0, 0.33);
+}
+
+.overlay_error {
+    visibility: hidden;
+    color: #d23127;
+    font-size: 75%;
+}
+
+.overlay_required_error {
+    margin-right: 7em;
+}
+
+#overlay_add_employee .overlay_info_box {
+    height: fit-content;
+    gap: 0.2em;
+}

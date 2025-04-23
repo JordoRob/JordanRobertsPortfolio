@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jordan Roberts - Portfolio</title>
+<style>
+@import url('https://fonts.cdnfonts.com/css/bauhaus-93');
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 1.5vw;
+font-family: "Avenir", sans-serif;
+font-weight: bold;
+	vertical-align: baseline;
+    text-decoration: none;
+}
+.bauhaus *, .bauhaus{
+    font-family: 'Bauhaus 93', sans-serif;
+    font-weight: normal;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.title-column{
+    background-color: #E85C41;
+    width:40%;
+    color:#152414;
+}
+
+.main{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    gap:0;
+    background-color: #EEF0E5;
+}.nav-column{
+    height:100%;
+    width:15%;
+    color:#d1c39d;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:right;
+
+
+}
+.main-column{
+    background-color: #B6C4B6;
+}
+.nav-column-list{
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+    width:100%;
+    align-content: end;
+    gap:1vh;
+    margin-bottom:24px;
+}
+.list-item{
+    height:8vh;
+    width:90%;
+    background-color: #B6C4B6;
+    margin-left:auto;
+    border-radius: 10px;
+    font-size:200%;
+    transition:0.2s ease-in-out;
+}
+.list-item>a{
+    color:#152414;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    width:100%;
+
+}
+.list-item:hover{
+    background-color: #304D30;
+    width:100%;
+}
+.list-item-selected{
+    background-color: #304D30;
+    width:100%;
+
+}
+.main-column{
+    width:85%;
+    margin:24px;
+    border:3px solid black;
+    overflow:auto;
+    height:95%;
+}
+.nav-column-header-text{
+    font-size:2em;
+    color:#152414;
+    text-align:right;
+    padding-right:0.1em;
+}
+.nav-column-header{
+text-align: right;
+}
+.header{
+    color:#152414;
+    text-align:center;
+    display:flex;
+    flex-direction: row;
+    justify-content: center ;
+    box-sizing: border-box ;
+    padding: 1% 0;
+    align-items:center;
+    gap:10em;
+}
+.header figcaption{
+    font-size:1vw;
+}
+.hello{
+    font-size: 5em;
+}
+.text-holder{
+width:100%;
+
+}
+.main-text-right{
+color: #EEF0E5;
+  text-align: left;
+max-width:70%;
+  background-color: #304D30;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding: 10px;
+float:right;
+font-weight: normal;
+}
+.main-text-left{
+    color: #EEF0E5;
+  text-align: left;
+max-width:70%;
+  background-color: #152414;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding: 15px;
+float:left;
+font-weight: normal;
+}
+.container-1{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:0.5em;
+    box-sizing: border-box;
+  padding: 0 0.5em;
+}
+.container-2{
+    display:block;
+    width:100%;
+    height:100%;
+}
+.profile-image{
+    width: 25%;
+    border-radius: 100%;
+}
+.arrow{
+    display:inline;
+    width:5%;
+    filter: invert(10%) sepia(12%) saturate(1871%) hue-rotate(68deg) brightness(97%) contrast(93%);
+    float:right;
+}
+.email{
+    color:#EEF0E5
+}
+
+</style>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class='main-column' data-simplebar>
+            <div class="container-1">  
+                    <span class="header">
+                        <span class='hello'>Hello!</span>
+                        <img src="assets/me.jpg" alt="Jordan Roberts" class="profile-image">
+                    
+                </span>
+
+                    <div class='text-holder'>
+			<span class="main-text-left">
+				I'm Jordan Roberts, a Junior Developer based out of British Columbia, Canada
+			</span>
+		</div>
+		<div class='text-holder'>
+                    <span class="main-text-right">
+			Here you can find the links to some of my projects 
+                       <img src="assets/right-arrow.svg" alt="Arrow" class="arrow"> 
+                     </span>
+		</div>
+		<div class='text-holder'>
+                	<span class="main-text-left">
+				Professionally I am interested in both front and back end Web Development and Software Development.
+				I have extensive experience in languages such as Python, Java, PHP, JavaScript, HTML and MySQL.
+                	</span>
+		</div>
+		<div class='text-holder'>
+                	<span class="main-text-right">
+				I enjoy spending my time wrenching on cars, riding motorcycles or snowboarding at one of our many local mountains.
+                	</span>
+		</div>
+		<div class='text-holder'>
+                    <span class="main-text-left">
+			If I sound like a good fit, or you'd just like to reach out you can email me at <a class='email' href='m&#97;ilto&#58;j%&#54;Fr%64a&#110;&#106;k&#37;72%6Fber%74&#115;&#64;gmail%2Ec%6Fm'>j&#111;rdanjkro&#98;erts&#64;gmai&#108;&#46;c&#111;m</a>.
+                	</span>
+		</div>
+</div>
+    </div>
+        <div class='nav-column bauhaus'>
+            <div class="nav-column-header">
+                <span class="nav-column-header-text">Jordan Roberts</span>
+            </div>    
+                <div class="nav-column-list">
+                    <span class="list-item list-item-selected">
+                        <a href="ForumProject/index.html">Home</a>
+                    </span>
+                    <span class="list-item">
+                        <a href="https://github.com/JordoRob">Github</a>
+                    </span>
+                    <span class="list-item">
+                        <a href="https://www.linkedin.com/in/jordan-roberts-bb6b7a2ab/">LinkedIn</a>
+                    </span>
+			<span class="list-item">
+                        <a href="labour/src/index.php">Labour Board</a>
+                    </span>
+
+                    <span class="list-item">
+                        <a href="ForumProject/home.php">Mason's Tavern</a>
+                    </span>
+                    <span class="list-item">
+                        <a href="JunkCollector/index.html">Junk Collector</a>
+                    </span>
+			<span class="list-item">
+                        <a href="CSF_API/index.php">Dog Stories</a>
+                    </span>
+
+                </div>
+           </div>
+    </div>
+
+</body>
+</html>

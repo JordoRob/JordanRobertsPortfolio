@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 15em;
+    gap: 1em;
+    width: calc(50% - 2em);
+}
+
+form legend {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #d9edff;
+    padding: 0.5em 1em;
+}
+
+form fieldset {
+    padding: 0.5em 1em;
+    width: calc(100% - 2em);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+form input, form select {
+    background-color: transparent;
+    border: 1px solid black;
+    width: 100%;
+}
+
+form input:read-only {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+form input:read-only:focus {
+    outline: none;
+}
+
+form button {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+    background-color: transparent;
+    font-size: 100%;
+    border: 1px solid;
+}
+
+.form_message {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5em 1em;
+    color: red;
+    width: 62%;
+}
+
+.form_field {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em 1em;
+    height: 2em;
+    width: calc(50% - 4em);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form_buttons {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    gap: 1em;
+}
+
+#main_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    position: fixed;
+    top: 5em;
+    height: 87%;
+    width: 100%;
+    padding: 1em 0;
+    overflow-y: scroll;
+}
+
+.function_note {
+    text-align: center;
+}
+
+.hovering_element {
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(18px);
+    background-color: rgb(255 255 255 / 66%);
+}
+
+@media screen and (max-width: 850px) {
+    .form_buttons {
+        flex-wrap: wrap;
+        gap: 0em;
+    }
+
+    .form_field {
+        width: 85%;
+        padding: 0.5em 1em;
+    }
+
+    form fieldset {
+        gap: 0.5em 1em;
+    }
+}

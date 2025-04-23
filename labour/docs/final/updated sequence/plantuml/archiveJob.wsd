@@ -1,0 +1,27 @@
+@startuml
+skin rose
+
+skinparam participantPadding 20
+skinparam participantBorderColor black
+
+title Remove Jobs Sequence Diagram
+
+actor User
+participant Client
+participant Server
+participant Database
+
+User -> Client: Selects Job for Editing
+Client -> Server: Enable Job Editing
+Client -> Server: Selects Archive Option
+Server --> Client: Prompt User for Confirmation
+User -> Client: Confirms "Yes"
+Client -> Server: Remove Job from Page
+Client -> Server: Move Employees to Unassigned Tab
+Server -> Database: Update Job Status
+Database -> Server: Acknowledge Update
+Server -> Database: Update Employee Assignments
+Database -> Server: Acknowledge Update
+Client --> User: Visual Confirmation
+
+@enduml

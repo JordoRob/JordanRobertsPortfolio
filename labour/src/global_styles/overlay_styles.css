@@ -1,0 +1,84 @@
+.overlay_notification_list {
+    margin-top: .5em;
+    padding: 0.2em;
+    border: rgba(0, 0, 0, 0.103) 2px solid;
+    height: 4em;
+    overflow-y: scroll;
+}
+
+.overlay_notification_title {
+    font-size: 150%;
+}
+
+.overlay_notification_message {
+    font-size: 100%;
+    margin-bottom: 0.4em;
+}
+
+.overlay_notification_info_list {
+    border: 1px gray solid;
+    padding: 0.5em 0 0 0.5em;
+}
+
+.overlay_notification_submessage {
+    color: gray;
+    font-size: 80%;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+}
+
+.important_message {
+    color: red;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.overlay_notification_buttons {
+    display: flex;
+    height: 2em;
+    justify-content: center;
+    width: 100%;
+    font-size: 100%;
+    gap: 2em;
+    padding-top: .5em;
+}
+
+.overlay_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background-color: transparent;
+    font-size: 100%;
+    border: 1px solid;
+}
+
+.overlay_button.confirm_hover:hover {
+    background-color: rgba(0, 255, 0, 0.33);
+    cursor: pointer;
+}
+
+.overlay_button.reject_hover:hover {
+    background-color: rgba(255, 0, 0, 0.33);
+    cursor: pointer;
+}
+
+#overlay_ajax_message {
+    position: absolute;
+    top: 2em;
+    right: 1em;
+    color: red;
+    width: 29em;
+}
+
+#overlay_separator_line {
+    display: block;
+    width: 30%;
+    height: 0.5em;
+    background: #D23127;
+    margin: 0.5em 0em;
+}
+
+.overlay_edit {
+    transition: background-color 1s linear;
+}

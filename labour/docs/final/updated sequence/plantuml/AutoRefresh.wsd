@@ -1,0 +1,34 @@
+@startuml
+
+skin rose
+
+title Auto Refresh
+
+Actor User
+Participant Client 
+Participant Server
+Database Database AS DB
+
+Client -> Client: Gets current time (Last Check) and users selected refresh interval
+Client -> Client: Sets Interval for users refresh interval (or disabled)
+alt Manual Refresh
+User ->Client: Clicks refresh button
+end
+loop Refresh Interval
+Client -> Server: Sends current page and last Check
+
+
+
+Server <-> DB: Request the last update time for relevant tables
+Server->Server: Compare Last check and last update
+Server->Client: Return T/F for recent update
+alt Recent Update
+Client -> Server: Request relevant page information (AJAX)
+Server <-> DB: Grab all needed data
+Server->Client: Send HTML data
+Client->Client: Rebuild page elements with new data
+end
+Client -> Client: Update last check variable with current time
+end
+
+@enduml

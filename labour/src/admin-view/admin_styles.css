@@ -1,0 +1,25 @@
+/* differentiate this page from the main page */
+.main-header {
+    background-color: rgb(165 212 255 / 77%);
+    position: relative;
+}
+
+#temp_pass input{
+    width: 100%;
+    font-size: 2em;
+    padding: 0.3em;
+}
+
+#temp_pass .overlay_button {
+    width: 25%
+}
+
+#temp_pass input{
+    width: 100%;
+    font-size: 2em;
+    padding: 0.3em;
+}
+
+#temp_pass .overlay_button {
+    width: 25%
+}

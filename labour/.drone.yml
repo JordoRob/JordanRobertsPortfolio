@@ -1,0 +1,31 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: initialize db
+  image: mysql
+  commands:
+  - sleep 25 # give time so mysql can start up
+  - mysql -h mysql-server -u root -psecret < b_testdb.sql
+  - mysql -h mysql-server -u root -psecret < c_testdbdata.sql
+
+- name: Run tests
+  image: jitesoft/phpunit
+  commands:
+  - phpunit ./tests --testdox
+
+services:
+- name: mysql-server # name of ip of the test database (host)
+  image: mysql
+  environment:
+    MYSQL_DATABASE: testdb # name of database itself (dbname)
+    MYSQL_ROOT_PASSWORD: secret
+  command: ['--default-time-zone=-07:00']
+
+trigger:
+  event:
+  - pull_request
+  action:
+  - opened
+  - synchronized

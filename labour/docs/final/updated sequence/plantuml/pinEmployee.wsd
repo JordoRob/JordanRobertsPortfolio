@@ -1,0 +1,18 @@
+@startuml
+skin rose
+skinparam participantPadding 20
+skinparam participantBorderColor black
+
+title Pin Employees Sequence Diagram
+
+actor User
+participant Client
+participant Server
+
+User -> Client: Navigates to Employee Tab
+Client -> Server: Drag Employee to Bottom Pin Bar
+Server -> Server: record pinned employee
+Server -> Client: Visually Updates Pin Bar
+Client --> User: Visual Confirmation
+
+@enduml
